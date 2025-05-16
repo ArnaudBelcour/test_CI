@@ -31,4 +31,4 @@ jobs:
         git clone https://github.com/ArnaudBelcour/ete.git
         cd ete
         pip install -e .
-        python run_tests.py
+        python3 run_tests.py
