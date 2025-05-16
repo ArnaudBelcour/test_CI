@@ -15,7 +15,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -25,4 +25,4 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
-        pip install git+https://github.com/ArnaudBelcour/ete@ete4.git
+        pip install git+https://github.com/ArnaudBelcour/ete.git@ete4
