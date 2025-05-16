@@ -31,4 +31,18 @@ jobs:
         git clone https://github.com/ArnaudBelcour/ete.git
         cd ete
         pip install -e .
-        python3 run_tests.py
+        pip install pytest
+        cd tests
+        pytest -vv test_tree.py
+        pytest -vv test_ncbiquery.py
+        pytest -vv test_gtdbquery.py
+        pytest -vv test_interop.py
+        pytest -vv test_phylotree.py
+        pytest -vv test_nexus.py
+        pytest -vv test_indent.py
+        pytest -vv test_treematcher.py
+        pytest -vv test_seqgroup.py
+        pytest -vv test_treediff.py
+        pytest -vv test_orthologs_group_delineation.py
+        pytest -vv test_treeview/test_all_treeview.py
+        pytest -vv slow/test_ncbiquery_force_download.py
