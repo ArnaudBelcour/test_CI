@@ -14,8 +14,11 @@ permissions:
 
 jobs:
   build:
-
-    runs-on: [ubuntu-latest, macos-latest, windows-latest]
+    strategy:
+      matrix:
+        platform: [windows-latest]
+        python-version: ["3.10"]
+    runs-on: ${{ matrix.platform }}
 
     steps:
     - uses: actions/checkout@v4
@@ -25,4 +28,7 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
-        pip install git+https://github.com/ArnaudBelcour/ete.git@ete4
+        git clone https://github.com/ArnaudBelcour/ete.git
+        cd ete
+        pip install -e .
+        python run_tests.py
